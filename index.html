@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Build My Career – LEGO CV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root {
+      --yellow: #f7d046;
+      --red: #d83b2d;
+      --blue: #2f6fed;
+      --dark: #1e1e1e;
+      --bg: #f2f2f2;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: #222;
+      overflow-x: hidden;
+    }
+
+    /* LEGO BASE BACKGROUND */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20px 20px, #ddd 4px, transparent 5px),
+        radial-gradient(circle at 60px 60px, #ddd 4px, transparent 5px);
+      background-size: 80px 80px;
+      opacity: 0.4;
+      z-index: -1;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px 60px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      max-width: 600px;
+      margin: auto;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 28px;
+      background: var(--yellow);
+      color: #000;
+      border-radius: 12px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 6px 0 #c9a700;
+      transition: transform .1s, box-shadow .1s;
+    }
+
+    .btn:active {
+      transform: translateY(4px);
+      box-shadow: 0 2px 0 #c9a700;
+    }
+
+    /* SECTIONS */
+    section {
+      max-width: 1100px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    /* LEGO BRICKS */
+    .bricks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .brick {
+      flex: 1 1 220px;
+      padding: 20px;
+      border-radius: 16px;
+      color: #fff;
+      position: relative;
+      cursor: pointer;
+      transition: transform .2s;
+    }
+
+    .brick:hover {
+      transform: translateY(-6px);
+    }
+
+    .brick::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 16px;
+      right: 16px;
+      height: 14px;
+      background:
+        radial-gradient(circle, rgba(255,255,255,.5) 40%, transparent 41%);
+      background-size: 22px 14px;
+    }
+
+    .brick.red { background: var(--red); }
+    .brick.blue { background: var(--blue); }
+    .brick.yellow { background: var(--yellow); color: #000; }
+
+    /* TIMELINE */
+    .timeline {
+      border-left: 6px solid var(--blue);
+      padding-left: 30px;
+    }
+
+    .step {
+      margin-bottom: 30px;
+    }
+
+    .step h3 {
+      margin: 0;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      opacity: 0.7;
+    }
+
+    /* MINI GAME */
+    #game {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      gap: 16px;
+      max-width: 500px;
+    }
+
+    .skill {
+      padding: 20px;
+      text-align: center;
+      border-radius: 14px;
+      background: var(--blue);
+      color: #fff;
+      font-weight: bold;
+      box-shadow: 0 6px 0 #1f4db7;
+      cursor: pointer;
+    }
+
+    .skill.active {
+      background: var(--yellow);
+      color: #000;
+      box-shadow: 0 6px 0 #c9a700;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>🧱 Build My Career</h1>
+  <p>Un curriculum interattivo costruito mattoncino dopo mattoncino.</p>
+  <a href="#about" class="btn">▶ Start Building</a>
+</header>
+
+<section id="about">
+  <h2>👤 Minifig Builder</h2>
+  <div class="bricks">
+    <div class="brick red">
+      <h3>Chi sono</h3>
+      <p>Sviluppatore creativo con passione per web, game e UX.</p>
+    </div>
+    <div class="brick blue">
+      <h3>Soft skills</h3>
+      <p>Problem solving, creatività, teamwork.</p>
+    </div>
+    <div class="brick yellow">
+      <h3>Valori</h3>
+      <p>Imparare costruendo. Migliorare giocando.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>🛠️ Brick Stack (clicca per costruire)</h2>
+  <div id="game">
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">Phaser</div>
+    <div class="skill">Git</div>
+    <div class="skill">UI/UX</div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>🏗️ Build Timeline</h2>
+  <div class="timeline">
+    <div class="step">
+      <h3>2023 – Web Developer</h3>
+      <p>Siti, app, esperienze interattive.</p>
+    </div>
+    <div class="step">
+      <h3>2024 – Game & Gamification</h3>
+      <p>Progetti in Phaser, mobile e web.</p>
+    </div>
+    <div class="step">
+      <h3>2025 – Creative Tech</h3>
+      <p>Esperienze gamificate e AI.</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>🎁 Playsets</h2>
+  <div class="bricks">
+    <div class="brick blue">
+      <h3>Crypto Idle Game</h3>
+      <p>Mobile idle game con rewarded ads.</p>
+    </div>
+    <div class="brick red">
+      <h3>Telegram Bot</h3>
+      <p>Monitor token e alert automatici.</p>
+    </div>
+    <div class="brick yellow">
+      <h3>Basket Website</h3>
+      <p>Sito dinamico con JSON & JS.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>📄 <a href="#" target="_blank">Download CV classico (PDF)</a></p>
+  <p>© Build My Career</p>
+</footer>
+
+<script>
+  // MINI GAME: click skills
+  document.querySelectorAll(".skill").forEach(skill => {
+    skill.addEventListener("click", () => {
+      skill.classList.toggle("active");
+    });
+  });
+</script>
+
+</body>
+</html>
